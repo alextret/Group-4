@@ -1,0 +1,20 @@
+function unique(arr) {
+  var result = [];
+
+  
+  nextInput:
+    for (var i = 0; i < arr.length; i++) {
+      var str = arr[i]; 
+      for (var j = 0; j < result.length; j++) { 
+        if (result[j] == str) continue nextInput; 
+      }
+      result.push(str);
+    }
+
+  return result;
+}
+
+var strings = [1, 1, 4, 3, 2, 3, 4, 44,3,4,34,3,3,3,3,3,3,32,2
+];
+
+alert( unique(strings) );
