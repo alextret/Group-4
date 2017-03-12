@@ -27,3 +27,17 @@ fruit.sort(  );
 
 
 console.log (fruit);
+
+
+//another homework rec FIBOnacci
+
+function fibo(n){
+  if ( n == 0 || n == 1)
+    return 1;
+else if (n>1) {
+  return fibo(n-1) + fibo(n-2);
+}
+}
+alert (fibo(8));
+alert (fibo(13));
+alert (fibo(34));
