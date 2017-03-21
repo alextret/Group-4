@@ -1,0 +1,37 @@
+function sum(a,b){
+  result = a + b;
+}
+function rest(a,b){
+  result = a - b;
+  
+}
+function div(a,b){
+  result = a / b;
+   
+}
+function mult(a,b){
+  result = a * b ;
+}
+var a=+prompt ("Number1","");
+var sign= ("+","-","/","*") ;
+znak=prompt("Sign", '');
+var b=+prompt ("Number2","");
+var result;
+
+
+switch (sign) {
+  case "+": sum (a,b);
+    alert (result);
+    break;
+
+  case "-": rest (a,b);
+    alert (result);
+     break;
+
+  case "/": div (a,b);
+    alert (result);
+     break;
+
+  case "*": mult (a,b);
+alert (result);
+            }

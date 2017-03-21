@@ -1,0 +1,43 @@
+function unique(arr) {
+  var result = [];
+
+  
+  nextInput:
+    for (var i = 0; i < arr.length; i++) {
+      var str = arr[i]; 
+      for (var j = 0; j < result.length; j++) { 
+        if (result[j] == str) continue nextInput; 
+      }
+      result.push(str);
+    }
+
+  return result;
+}
+
+var strings = [1, 1, 4, 3, 2, 3, 4, 44,3,4,34,3,3,3,3,3,3,32,2
+];
+
+alert( unique(strings) );
+
+
+var fruit = ["яблоко", "11", "английский", "груша", "ворона", "ананас", "4", "апельсин", "ворон", "а", "Япония", "Англия", "255"];
+ 
+fruit.sort(  );
+
+
+
+console.log (fruit);
+
+
+//another homework rec FIBOnacci
+
+function fibo(n){
+  if ( n == 0 || n == 1)
+    return 1;
+else if (n>1) {
+  return fibo(n-1) + fibo(n-2);
+}
+}
+alert (fibo(8));
+alert (fibo(13));
+alert (fibo(34));
