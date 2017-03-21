@@ -1,0 +1,271 @@
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    body {
+   font-family: PT Sans Narrow;
+    margin: 10px;
+    padding: 4px;
+       color: #432523;
+        font-size: 17px;
+    }
+    .form {
+       
+        max-width: 95%;
+        box-sizing:border-box;
+        z-index: 1;
+        
+    }
+    #h1 {
+        
+            text-align: center;
+    padding-right: 37px;
+    }
+    
+    .glowing-border {
+    border: 2px solid #dadada;
+    border-radius: 7px;
+}
+
+.glowing-border:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+        
+    .bg {
+           
+  left: 329px;
+    top: 85px;
+    }
+    
+    div {
+   text-align: left;
+    margin-top: 20px;
+    margin-bottom: 3px;
+    font-size: 18px;
+    }
+    
+
+    
+    #input1 {
+    position: relative;
+    left: 121px;
+    top: -36px;
+     padding: 12px;
+    }
+    
+    #input3 {
+    position: relative;
+    left: 121px;
+    top: -39px;
+     padding: 12px;
+    }
+    #input4 {
+    position: relative;
+    left: 120px;
+    top: -34px;
+    width: 170px;
+     padding: 12px;
+    }
+    
+    .select{
+    position: relative;
+    left: 287px;
+    top: -25px;
+    box-sizing: border-box;
+    
+    width: 124px;
+    font-family: PT Sans Narrow;
+    border: 2px solid #dadada;
+    border-radius: 7px;
+    
+    }
+    .sex{
+            position: relative;
+    left: 90px;
+    top: -19px;
+    }
+    .labelradio {
+            position: relative;
+    left: 29px;
+    top: -26px;
+    }
+    .labelradio2 {
+            position: relative;
+    left: 144px;
+    top: -43px;
+    }
+    
+.button {
+  display: inline-block;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: relative;
+    left: 8px;
+    top: -29px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+    
+    .p {
+     position: relative;
+    top: -27px;
+    }
+</style>
+
+<body>
+
+
+    <div class="bg">
+    <h1 id="h1">А знаете ли вы Javascript?</h1>
+
+    
+       
+    
+    <hr>
+       
+       
+       
+    <form class="form">
+       <div>Имя</div>  <input class="glowing-border"  id="input1" type="text" name="first_name" placeholder="Ваше имя" maxlength="20" autocomplete="false">
+    
+        <div>Моб.телефон</div> <input  class="glowing-border" id="input3" type="text" name="phone" placeholder="(XXX)XXX-XX-XX" title="Ваш телефон">
+
+      
+        <div>Возраст</div> <input  class="glowing-border" id="input4" type="number" name="age" placeholder="Ваш возраст" min="10" max="90"   >
+        
+    
+        
+        <p class="p" id="errors"></p>
+        
+        
+        <div class="sex">Ваш пол</div>
+        <div class="labelradio">
+        <label><input type="radio" name="gender" value="male">Мужской</label>
+        <label><input type="radio" name="gender" value="female" checked>Женский</label>
+        </div>
+        <div>Оцените ваши знания Javascript</div>
+        <select name="knowledge" class="select">
+            <option value="0">Не знаю</option>
+            <option value="1">Слышал</option>
+            <option value="2">Немного знаю</option>
+            <option value="3">Знаю</option>
+            <option value="4">Работаю</option>
+        </select>
+        <div>Что вы знаете?</div>
+        <div class="labelradio2">
+        <label><input type="checkbox" name="jquery">jQuery</label>
+        <label><input type="checkbox" name="bootstrap">Bootstrap</label>
+        </div>
+        <input class="button" type="submit" value="Submit data" >
+    </form>
+  <hr>
+    </div>
+
+    <script>
+        var errors = document.getElementById('errors');
+        var form = document.forms[0];
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            if (validateForm())
+                showError("Форма удачно отправлена", true);
+        };
+        function validateForm() {
+            if (!validateTextInput(form.elements.first_name))
+                return false;
+            if (!validateNumberInput(form.elements.age))
+                return false;
+            if (!validateCheckbox(form.elements.gender))
+                return false;
+            if(!validateTelephone(form.elements.phone))
+                return false;
+            return true;
+        }
+        function showError(text, success) {
+            if (success)
+                errors.innerHTML = "<span style='color: green'>" + text + "</span>";
+            else
+                errors.innerHTML = "<span style='color: red'>" + text + "</span>";
+        }
+        function validateTextInput(input) {
+            input.value = input.value.trim();
+            var value = input.value;
+            if (!value) {
+                showError("Имя**Это обязательное поле", false);
+                return false;
+            }
+            else if (value.length < 2) {
+                showError("Длина введенного значения должна быть больше одного символа", false);
+                return false;
+            }
+            else if (value.length > 20) {
+                showError("Длина введенного значения должна быть меньше 21 символа", false);
+                return false;
+            }
+            else
+                return true;
+            
+        }
+        function validateNumberInput(input) {
+            input.value = input.value.trim();
+            var value = input.value;
+            if (!value) {
+                showError("Возраст** Это обязательное поле", false);
+                return false;
+            }
+            else if (isNaN(+value)) {
+                showError("Вы должны ввести число", false);
+                return false;
+            }
+            else if (value < 10 || value > 90) {
+                showError("Значение должно быть в пределах 10..90", false);
+                return false;
+            }
+            else
+                return true;
+        }
+        function validateCheckbox(input) {
+            var value = input.value;
+            if (value !== 'male' && value !== 'female') {
+                showError("Пожалуйста выберите значение", false);
+                return false;
+            }
+            else
+                return true;
+        }
+        function validateTelephone(input) {
+            var value = input.value;
+            if (!/^\(0\d{2}\)\s?\d{3}-\d{2}-\d{2}$/.test(value)) {
+                showError("Введите телефон в формате (XXX)XXX-XX-XX", false);
+                return false;
+            }
+            else
+                return true;
+        }
+    </script>
+</body>
+
+</html>
