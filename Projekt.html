@@ -3,43 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="playground" >  </div>
   
-<input type="submit" name="Отправить">
  
  
  
+ <button>SUBMIT </button>
+ <form class="hide">
+ <br>
  
  
- 
- 
- 
- <script>
-    
-     var select = document.createElement("select","options");
-     var input = document.createElement('input',{type : 'text', name : 'name', id : 'name', size:'30', value : "asdasd"});
-     var txtarea = document.createElement('textarea', {wrap : 'virtual',	name : 'message', id : 'quickreplytxt', cols:'60', rows:'10'});
-     var submit = document.createElement('input', {type : 'submit', value: 'Отправить'});
-     
-        document.getElementById('playground').appendChild(select);
-        document.getElementById('playground').appendChild(input);
-        document.getElementById('playground').appendChild(txtarea);
-        document.getElementById('playground').appendChild(submit); 
-     
-     
-     function hide 
-     
+</form>
 
-     
 
  
-    
-    
-    
  
+   <script>
+
+    
+  $.noConflict();
+jQuery( document ).ready(function( $ ) {
+ 
+    
+ $("form").append('<select><option>div</option><option>span</option><option>p</option><option>h1</option></select>')
+$("select").addClass("myselect").css("width", "100px")
+$("form").append('<input>')
+
+$("input").attr({type: "text"}).css({border:" 1px solid grey", color: "green", width:"100px"}).val()
+
+
+
+
+$("form").append('<textarea> Hello World</textarea>')
+    $("textarea").wrap("<p></p>")
+
+$("form").css("visibility", "hidden");
+
+
+      
+    
+    
+    
+    
+    
+    
+    jQuery('button').click(function(){
+        jQuery('form').css("visibility", "visible" );
+    });        
+});
+    
  </script>
  
  
