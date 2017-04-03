@@ -41,3 +41,128 @@ else if (n>1) {
 alert (fibo(8));
 alert (fibo(13));
 alert (fibo(34));
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .wheatherBlock {
+       border: 6px solid #03A9F4;
+    width: 180px;
+    height: 206px;
+    border-radius: 7px;
+      
+      
+    }    
+    .cit {
+        font-size: 24px;
+    text-align: center;
+   position: relative;
+    left: 28px;
+        
+    }
+    .tem{
+           font-size: 20px;
+    position: relative;
+    top: 9px;
+}
+    #smth {
+            position: relative;
+    top: 19px;
+    font-size: 20px;
+    }
+  #icon {
+                
+        position: relative;
+    top: 15px;
+    left: 33px;
+    }
+    #icon img {
+        width: 111px;
+    }
+   
+</style>
+
+
+
+
+
+<body>
+
+<div class="wheatherBlock" id="da">
+<span  class="cit"></span>
+ <span class="tem" id="temp"></span>
+<span id="smth"></span>
+<span id="icon"></span>
+
+    
+</div>
+
+      
+ <form>
+       <input type="text" value="city">
+       <input type="submit" name="Send" id="gogo" onclick="XMLHttpRequest()">
+ </form>
+
+ 
+ <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+
+<script>
+    
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?APPID=2f439b80695defb534c00fba71ed227d&q=Zaporizhya&units=metric&lang=ru');
+        xhr.send();
+        xhr.onreadystatechange = function f() {
+          
+            if (xhr.readyState !== 4)
+                return;
+            if(xhr.status === 200) {
+                try {
+                    var weather = JSON.parse(xhr.responseText);
+                    var info = weather.name;
+                
+                    info += " Температура: " + weather.main.temp;
+                    info += " Погода: " + weather.weather[0].description;
+                    info += " <img src='http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png' alt=''>";
+                 
+                    
+                   var 
+                   city= jQuery("div .cit").append(weather.name)
+                   div = jQuery("div #temp").append(" Температура: " + weather.main.temp);
+                   span = jQuery("div #smth").append(" Погода: " + weather.weather[0].description);
+                   span2 = jQuery("div #icon").append("<img src='http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png' alt=''>");
+                    
+                 }
+                catch (e) {
+                    console.log("Wrong JSON!");
+                }
+             }
+            else {
+                console.log(xhr.status + " " + xhr.statusText);
+            }
+        }
+</script>
+ 
+</body>
+</html>
+</body>
+</html>
