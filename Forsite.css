@@ -1,0 +1,205 @@
+#box-wrapper {
+    background-image: url(images/pexels-photo-198747.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 700px;
+}
+
+
+#workflow img{
+    width: 100%;
+}
+h3 {
+    text-align: center;
+}
+
+#about .row {
+    margin-top: 25px;
+}
+
+#about{
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#askman{
+    margin-top: -15px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#colored{
+   color: green;
+}
+
+#forO{
+    color: #885811;
+}
+
+#footer{
+  background-color:#333333;
+}
+
+#textfooter {
+    text-align: center;
+    margin-top: 28px; 
+}
+
+.icon-bar {
+    background-color: red; !important;
+}
+#locati {
+    margin-top: 56px;
+}
+
+html,
+body {
+    overflow-x: hidden; 
+}
+
+body {
+    padding-top: 100px;
+}
+
+#footer {
+   text-align: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-container {
+    padding: 20px 0 20px 0;
+}
+
+.navbar.navbar-fixed-top.fixed-theme {
+    background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+.navbar-brand.fixed-theme {
+    font-size: 22px;
+}
+
+.navbar-container.fixed-theme {
+    padding: 0;
+}
+
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container{
+    transition: 0.8s;
+    -webkit-transition:  0.8s;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#login-dp .help-block{
+    font-size:12px    
+}
+
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+
+#login-dp .social-buttons a{
+    width: 49%;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+
+nav a {
+    font-size: 20px;
+}
+#adress {
+    font-size: 22px;
+} 
+#Gentext{
+    margin-top: 10px;
+}
+
+#brand {
+    font-size: 50px;
+}
+
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+@media(max-width:768px){
+        #Gentext {
+            float: left;
+            max-width: 50%;
+        }
+        #askman {
+   float: right;
+        
+}
+
+}
+    
+}
+    @media only screen and (max-width : 768px) {
+    #box-wrapper {
+   min-height: 600px;
+      background-position: left;
+    }
+}
+@media only screen and (max-width : 979px) {
+ #Gentext {
+            float: left;
+            max-width: 50%;
+        }
+        #askman {
+   float: right;
+}
